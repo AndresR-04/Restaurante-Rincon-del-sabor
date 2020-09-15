@@ -7,11 +7,11 @@ class CategoryPolicy
   end
 
   def index?
-    @user.has_role? :admin
+    @user.has_role? :all
 
   end
   def new?
-    @user.has_role? :admin
+    @user.has_role? :all
   end
   def show?
 

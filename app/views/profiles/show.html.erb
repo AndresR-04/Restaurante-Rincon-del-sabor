@@ -1,21 +1,63 @@
 <p id="notice"><%= notice %></p>
 
 
-
-<p>
-  <strong>Nombre:</strong>
-  <%= @profile.nombre %>
-</p>
-
-<p>
-  <strong>Identificacion:</strong>
-  <%= @profile.cedula %>
-</p>
-
-<p>
-  <strong>Telefono:</strong>
-  <%= @profile.telefono %>
-</p>
-
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<div class="container emp-profile">
+  <form method="post">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-img">
+          <img src="https://www.google.com/url?sa=i&url=http%3A%2F%2Fvalleyadventours.com%2Fnosotros%2Favatar-hombre%2F&psig=AOvVaw19oj7Fi-NBMAB8tmqjekaP&ust=1600292231396000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCL27CP7OsCFQAAAAAdAAAAABAD" alt=""/>
+          <div class="file btnbtn-primary">
+            <input type="file" name="file"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="profile-head">
+          <h5>
+            <%= @profile.nombre %>
+          </h5>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <%= link_to 'Edit', edit_profile_path(@profile) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-work">
+          <p>Datos</p>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="tab-content profile-tab" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Nombre</label>
+              </div>
+              <div class="col-md-6">
+                <p><%= @profile.nombre%></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Cedula</label>
+              </div>
+              <div class="col-md-6">
+                <p><%= @profile.cedula%></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Telefono</label>
+              </div>
+              <div class="col-md-6">
+                <p><%= @profile.telefono%></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
